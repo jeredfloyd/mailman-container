@@ -19,4 +19,12 @@ Some notes:
 
 * 'myhost' and 'myorigin' must be updated in main.cf to match your
   install.
+
+* 'mailman-crontab' should be copied to the host /etc/cron.d directory.
+
+* This expects a container name of 'mailman' and directories
+  /srv/mailman/config, /srv/mailman/logs and /srv/mailman/mailman
+
+* Example config files are provided.
+
   

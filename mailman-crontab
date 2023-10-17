@@ -1,0 +1,13 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+@daily             podman exec -it mailman mailman digests --periodic
+@daily 		   podman exec -it mailman mailman notify
+* * * * *          podman exec -it mailman mailman-web runjobs minutely
+0,15,30,45 * * * * podman exec -it mailman mailman-web runjobs quarter_hourly
+@hourly            podman exec -it mailman mailman-web runjobs hourly
+@daily             podman exec -it mailman mailman-web runjobs daily
+@weekly            podman exec -it mailman mailman-web runjobs weekly
+@monthly           podman exec -it mailman mailman-web runjobs monthly
+@yearly            podman exec -it mailman mailman-web runjobs yearly
