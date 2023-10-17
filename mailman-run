@@ -1,0 +1,8 @@
+#!/bin/bash
+sudo /usr/sbin/postfix start
+mailman start --force
+mailman-web qcluster --pythonpath /etc/mailman3 --settings settings &
+sleep 5
+gunicorn -D -c /etc/mailman3/gunicorn.conf mailman_web.wsgi:application
+sleep 5
+exec nginx -g "daemon off;"
