@@ -16,3 +16,7 @@ Some notes:
 
 * An external MariaDB instance is expected; it is not included in this
   container.
+
+* 'myhost' and 'myorigin' must be updated in main.cf to match your
+  install.
+  
