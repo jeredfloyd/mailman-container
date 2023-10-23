@@ -17,7 +17,7 @@ USER 1001
 ENV PATH="$HOME/.local/bin:$PATH"
 COPY bashrc $HOME/.bashrc
 COPY mailman-run mailman-upgrade $HOME
-RUN pip3 install mailman==3.3.9 mailman-web==0.0.8 mailman-hyperkitty==1.2.1 hyperkitty==1.3.8 postorius==1.3.10 django-mailman==1.3.11
+RUN pip3 install mailman==3.3.9 mailman-web==0.0.8 mailman-hyperkitty==1.2.1 hyperkitty==1.3.8 postorius==1.3.10 django-mailman3==1.3.11
 
 # Patch list defaults
 COPY base.py $HOME/.local/lib/python3.9/site-packages/mailman/styles
