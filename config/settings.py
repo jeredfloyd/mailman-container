@@ -152,6 +152,3 @@ SOCIALACCOUNT_PROVIDERS = {
            ],
     },
 }
-
-# Fix for updated django-allauth
-MIDDLEWARE += ('allauth.account.middleware.AccountMiddleware',)
